@@ -1,13 +1,13 @@
-package website.demo.controller;
+package com.economizeja.demo.controller;
 
 import jakarta.validation.Valid;
-import website.demo.dtos.AuthenticationDTO;
-import website.demo.dtos.LoginResponseDTO;
-import website.demo.dtos.RegisterDTO;
-import website.demo.model.Usuario;
-import website.demo.model.UsuarioRole;
-import website.demo.repository.UsuarioRepository;
-import website.demo.security.TokenService;
+import com.economizeja.demo.dtos.AuthenticationDTO;
+import com.economizeja.demo.dtos.LoginResponseDTO;
+import com.economizeja.demo.dtos.RegisterDTO;
+import com.economizeja.demo.model.Usuario;
+import com.economizeja.demo.model.UsuarioRole;
+import com.economizeja.demo.repository.UsuarioRepository;
+import com.economizeja.demo.security.TokenService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;

@@ -1,4 +1,4 @@
-package website.demo.model;
+package com.economizeja.demo.model;
 
 import java.util.Collection;
 import java.util.List;
@@ -44,7 +44,7 @@ public class Usuario implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         
-        if (this.role== UsuarioRole.USER) {
+        if (this.role== UsuarioRole.ADMIN) {
             return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
         }
         

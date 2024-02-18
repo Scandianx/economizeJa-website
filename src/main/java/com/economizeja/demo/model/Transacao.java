@@ -1,4 +1,4 @@
-package website.demo.model;
+package com.economizeja.demo.model;
 
 import java.util.Date;
 
@@ -28,9 +28,18 @@ public class Transacao {
     @Column(nullable = false)
     private TransacaoTipo tipo;
     @Column(nullable = false)
+    private TransacoesCategorias categoria;
+    @Column(nullable = false)
     private double valor;
     @Column(nullable = false)
     private Date data;
+    public Transacao(TransacaoTipo tipo, double valor, Poupanca poupanca, TransacoesCategorias categoria) {
+        this.tipo = tipo;
+        this.valor = valor;
+        this.poupanca = poupanca;
+        this.data = new Date();
+        this.categoria= categoria;
+    }
     @ManyToOne
     @JsonBackReference(value = "poupancaValue")
     private Poupanca poupanca;

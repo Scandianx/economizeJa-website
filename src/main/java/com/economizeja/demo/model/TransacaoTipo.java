@@ -1,4 +1,4 @@
-package website.demo.model;
+package com.economizeja.demo.model;
 
 import lombok.AllArgsConstructor;
 

@@ -1,4 +1,4 @@
-package website.demo.model;
+package com.economizeja.demo.model;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -30,7 +30,15 @@ public class Poupanca {
     private Usuario usuario;
     @Column(nullable=false)
     private double saldo;
+    @Column(nullable=false)
+    private String nome;
     @OneToMany(mappedBy="poupanca")
     @JsonManagedReference(value="poupancaValue")
     private List<Transacao> transacoes;
+    public Poupanca(Usuario usuario, double saldo, String nome, List<Transacao> transacoes) {
+        this.usuario = usuario;
+        this.nome = nome;
+        this.saldo = saldo;
+        this.transacoes = transacoes;
+    }
 }

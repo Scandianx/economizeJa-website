@@ -1,5 +1,5 @@
 package com.economizeja.demo.dtos;
 
-public record PoupancaResponseDTO () {
+public record TransacaoResponseDTO() {
     
 }
