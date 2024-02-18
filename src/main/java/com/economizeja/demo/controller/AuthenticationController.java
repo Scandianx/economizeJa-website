@@ -44,16 +44,19 @@ public class AuthenticationController {
     
 
     @PostMapping("/register")
-    public Usuario register(@RequestBody @Valid RegisterDTO data) {
+    public ResponseEntity<LoginResponseDTO> register(@RequestBody @Valid RegisterDTO data) {
         if (this.repository.findByUsername(data.username()) != null) {
-            return new Usuario();
+            
         }
 
         String eP = new BCryptPasswordEncoder().encode(data.password());
 
         Usuario usuario = new Usuario(data.username(), eP, data.fullName(), UsuarioRole.USER);
         repository.save(usuario);
-        return usuario;
+        var usernamePassword = new UsernamePasswordAuthenticationToken(data.username(), data.password());
+        var auth = this.authenticationManager.authenticate(usernamePassword);
+        var token = tokenService.generateToken((Usuario) auth.getPrincipal());
+        return ResponseEntity.ok(new LoginResponseDTO(token));
 
     }
 

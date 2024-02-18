@@ -67,7 +67,7 @@ public class PoupancaService {
         String token = header.substring(7);
         var username = tokenService.validateToken(token);
         Usuario usuario = (Usuario) usuarioRepository.findByUsername(username);
-        System.out.println(token);
+       
         return usuario;
 
     }
