@@ -9,7 +9,7 @@ public enum TransacaoTipo {
 
     private String tipo;
 
-    public String getRole() {
+    public String getTipo() {
         return tipo;
     }
 }

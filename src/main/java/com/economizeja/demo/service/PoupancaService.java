@@ -62,7 +62,9 @@ public class PoupancaService {
 
     }
 
-    private Usuario converterToken(HttpServletRequest request) {
+    
+
+    protected Usuario converterToken(HttpServletRequest request) {
         String header = request.getHeader("Authorization");
         String token = header.substring(7);
         var username = tokenService.validateToken(token);

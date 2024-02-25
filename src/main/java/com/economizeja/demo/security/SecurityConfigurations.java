@@ -29,7 +29,7 @@ public class SecurityConfigurations {
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         .requestMatchers(HttpMethod.POST, "/agendamento/consult-appointments").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/agendamento").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/usuario").permitAll()
                         .requestMatchers(HttpMethod.POST, "/produto").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
